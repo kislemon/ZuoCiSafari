@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6CF4CDC21CB6727D005ADF8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4CDC11CB6727D005ADF8D /* AppDelegate.swift */; };
+		6CF4CDC41CB6727D005ADF8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4CDC31CB6727D005ADF8D /* ViewController.swift */; };
+		6CF4CDC71CB6727D005ADF8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF4CDC51CB6727D005ADF8D /* Main.storyboard */; };
+		6CF4CDC91CB6727D005ADF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CF4CDC81CB6727D005ADF8D /* Assets.xcassets */; };
+		6CF4CDCC1CB6727D005ADF8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF4CDCA1CB6727D005ADF8D /* LaunchScreen.storyboard */; };
+		6CF4CDD61CB672CF005ADF8D /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4CDD51CB672CF005ADF8D /* SafariViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6CF4CDBE1CB6727D005ADF8D /* ZuoCiSafari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZuoCiSafari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CF4CDC11CB6727D005ADF8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CF4CDC31CB6727D005ADF8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CF4CDC61CB6727D005ADF8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CF4CDC81CB6727D005ADF8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CF4CDCB1CB6727D005ADF8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CF4CDCD1CB6727D005ADF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CF4CDD51CB672CF005ADF8D /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CF4CDBB1CB6727D005ADF8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CF4CDB51CB6727D005ADF8D = {
+			isa = PBXGroup;
+			children = (
+				6CF4CDC01CB6727D005ADF8D /* ZuoCiSafari */,
+				6CF4CDBF1CB6727D005ADF8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CF4CDBF1CB6727D005ADF8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CF4CDBE1CB6727D005ADF8D /* ZuoCiSafari.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CF4CDC01CB6727D005ADF8D /* ZuoCiSafari */ = {
+			isa = PBXGroup;
+			children = (
+				6CF4CDC11CB6727D005ADF8D /* AppDelegate.swift */,
+				6CF4CDC31CB6727D005ADF8D /* ViewController.swift */,
+				6CF4CDD51CB672CF005ADF8D /* SafariViewController.swift */,
+				6CF4CDC51CB6727D005ADF8D /* Main.storyboard */,
+				6CF4CDC81CB6727D005ADF8D /* Assets.xcassets */,
+				6CF4CDCA1CB6727D005ADF8D /* LaunchScreen.storyboard */,
+				6CF4CDCD1CB6727D005ADF8D /* Info.plist */,
+			);
+			path = ZuoCiSafari;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CF4CDBD1CB6727D005ADF8D /* ZuoCiSafari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF4CDD01CB6727D005ADF8D /* Build configuration list for PBXNativeTarget "ZuoCiSafari" */;
+			buildPhases = (
+				6CF4CDBA1CB6727D005ADF8D /* Sources */,
+				6CF4CDBB1CB6727D005ADF8D /* Frameworks */,
+				6CF4CDBC1CB6727D005ADF8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZuoCiSafari;
+			productName = ZuoCiSafari;
+			productReference = 6CF4CDBE1CB6727D005ADF8D /* ZuoCiSafari.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CF4CDB61CB6727D005ADF8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Lemon;
+				TargetAttributes = {
+					6CF4CDBD1CB6727D005ADF8D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 6CF4CDB91CB6727D005ADF8D /* Build configuration list for PBXProject "ZuoCiSafari" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CF4CDB51CB6727D005ADF8D;
+			productRefGroup = 6CF4CDBF1CB6727D005ADF8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CF4CDBD1CB6727D005ADF8D /* ZuoCiSafari */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CF4CDBC1CB6727D005ADF8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF4CDCC1CB6727D005ADF8D /* LaunchScreen.storyboard in Resources */,
+				6CF4CDC91CB6727D005ADF8D /* Assets.xcassets in Resources */,
+				6CF4CDC71CB6727D005ADF8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CF4CDBA1CB6727D005ADF8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF4CDC41CB6727D005ADF8D /* ViewController.swift in Sources */,
+				6CF4CDD61CB672CF005ADF8D /* SafariViewController.swift in Sources */,
+				6CF4CDC21CB6727D005ADF8D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6CF4CDC51CB6727D005ADF8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CF4CDC61CB6727D005ADF8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CF4CDCA1CB6727D005ADF8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CF4CDCB1CB6727D005ADF8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CF4CDCE1CB6727D005ADF8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CF4CDCF1CB6727D005ADF8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CF4CDD11CB6727D005ADF8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZuoCiSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.ZuoCiSafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6CF4CDD21CB6727D005ADF8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZuoCiSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.ZuoCiSafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CF4CDB91CB6727D005ADF8D /* Build configuration list for PBXProject "ZuoCiSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF4CDCE1CB6727D005ADF8D /* Debug */,
+				6CF4CDCF1CB6727D005ADF8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CF4CDD01CB6727D005ADF8D /* Build configuration list for PBXNativeTarget "ZuoCiSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF4CDD11CB6727D005ADF8D /* Debug */,
+				6CF4CDD21CB6727D005ADF8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CF4CDB61CB6727D005ADF8D /* Project object */;
+}
