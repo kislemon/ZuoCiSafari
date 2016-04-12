@@ -10,7 +10,8 @@ import UIKit
 
 class SafariViewController: UIViewController, UIWebViewDelegate {
     
-    var webView = UIWebView()
+    let webView = UIWebView()
+    let progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
     var currentRequest = NSURLRequest()
     var requestArray = [NSURLRequest]()
     
@@ -65,9 +66,15 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
     //添加webview
     func initializeUserInterface() {
         self.addNavigationItems()
+        
         webView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 64)
         webView.delegate = self;
         self.view.addSubview(webView)
+        
+        progressView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 1)
+        progressView.progress = 0.0;
+        progressView.tintColor = UIColor.greenColor()
+        self.view.addSubview(progressView)
         
         chooseView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.height - 64, UIScreen.mainScreen().bounds.width, 0)
         chooseView.backgroundColor = UIColor.blueColor()
@@ -147,10 +154,18 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        
+        progressView.alpha = 1
+        progressView.progress = 0
+        progressView.setProgress(0.7, animated: true)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        progressView.setProgress(1.0, animated: true)
+        UIView.animateWithDuration(0.25, delay: 0.5, options: UIViewAnimationOptions.LayoutSubviews, animations: {
+            self.progressView.alpha = 0
+            }) { (succeed) in
+                self.progressView.progress = 0
+        }
         self.title = webView.stringByEvaluatingJavaScriptFromString("document.title")
         if requestArray.count == 0 {
             requestArray.append(currentRequest)
