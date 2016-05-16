@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.translucent = false
         let button = UIButton(frame: CGRectMake(100, 100, 50, 50))
         button.backgroundColor = UIColor.grayColor()
         button.addTarget(self, action: #selector(self.get), forControlEvents: UIControlEvents.TouchUpInside)
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     func get() {
-        SafariViewController.openUrlStr("http://www.baidu.com")
+        SafariViewController.openUrlStr("http://www.sina.com")
     }
 
 

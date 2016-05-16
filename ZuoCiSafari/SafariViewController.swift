@@ -15,7 +15,6 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
     var currentRequest = NSURLRequest()
     var requestArray = [NSURLRequest]()
     
-    
     var backItem = UIBarButtonItem()
     var closeItem = UIBarButtonItem()
     
@@ -38,9 +37,16 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
     
     //打开urlString
     class func openUrlStr(urlStr:String) {
-        let nav = UINavigationController(rootViewController: SafariViewController.sharedInstance)
-        nav.navigationBar.translucent = false
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
+        let navRoot = UIApplication.sharedApplication().keyWindow?.rootViewController?.isKindOfClass(UINavigationController)
+        if (navRoot != nil) && navRoot! {
+            let nav = UIApplication.sharedApplication().keyWindow?.rootViewController as! UINavigationController
+            nav.navigationBar.translucent = false
+            nav.pushViewController(SafariViewController.sharedInstance, animated: true)
+        } else {
+            let nav = UINavigationController(rootViewController: SafariViewController.sharedInstance)
+            nav.navigationBar.translucent = false
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
+        }
         SafariViewController.sharedInstance.requestArray = [NSURLRequest]()
         let request = NSURLRequest(URL: NSURL(string: urlStr)!)
         SafariViewController.sharedInstance.webView.loadRequest(request)
@@ -95,13 +101,20 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
             webView.loadRequest(requestArray[requestArray.count - 2])
             requestArray.removeLast()
         } else {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.closeEvent(UIBarButtonItem())
         }
     }
     
+    
     //关闭浏览器
     func closeEvent(_:UIBarButtonItem) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        let navRoot = UIApplication.sharedApplication().keyWindow?.rootViewController?.isKindOfClass(UINavigationController)
+        if (navRoot != nil) && navRoot! {
+            let nav = UIApplication.sharedApplication().keyWindow?.rootViewController as! UINavigationController
+            nav.popViewControllerAnimated(true)
+        } else {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     //弹出选项窗口
@@ -146,38 +159,45 @@ class SafariViewController: UIViewController, UIWebViewDelegate {
     
     //MARK:-WebViewDelegate
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        currentRequest = request
-        if requestArray.count > 0  && requestArray.last!.mainDocumentURL?.absoluteString != request.mainDocumentURL?.absoluteString{
-            requestArray.append(request)
-        }
         return true
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        progressView.alpha = 1
-        progressView.progress = 0
-        progressView.setProgress(0.7, animated: true)
+        if webView.request != nil {
+            if requestArray.count == 0 || (requestArray.count > 0  && requestArray.last!.mainDocumentURL?.absoluteString != webView.request!.mainDocumentURL?.absoluteString) {
+                progressView.alpha = 1
+                progressView.progress = 0
+                progressView.setProgress(0.7, animated: true)
+            }
+        }
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        
+        self.title = webView.stringByEvaluatingJavaScriptFromString("document.title")
+        
+        if requestArray.count > 1 && self.navigationItem.leftBarButtonItems?.count < 2 {
+            self.navigationItem.leftBarButtonItems = [backItem, closeItem]
+        } else if requestArray.count == 1 && self.navigationItem.leftBarButtonItems?.count >= 2 {
+            self.navigationItem.leftBarButtonItems = [backItem]
+        }
+        
         progressView.setProgress(1.0, animated: true)
         UIView.animateWithDuration(0.25, delay: 0.5, options: UIViewAnimationOptions.LayoutSubviews, animations: {
             self.progressView.alpha = 0
-            }) { (succeed) in
-                self.progressView.progress = 0
+        }) { (succeed) in
+            self.progressView.progress = 0
         }
-        self.title = webView.stringByEvaluatingJavaScriptFromString("document.title")
-        if requestArray.count == 0 {
-            requestArray.append(currentRequest)
-        }
-        if requestArray.count > 1 && self.navigationItem.leftBarButtonItems?.count < 2 {
-            self.navigationItem.leftBarButtonItems = [backItem, closeItem]
-        }
-        if requestArray.count == 1 && self.navigationItem.leftBarButtonItems?.count >= 2 {
-            self.navigationItem.leftBarButtonItems = [backItem]
+        
+        if webView.request != nil {
+            currentRequest = webView.request!
+            if requestArray.count == 0 || (requestArray.count > 0  && requestArray.last!.mainDocumentURL?.absoluteString != currentRequest.mainDocumentURL?.absoluteString) {
+                //加载完毕网页后纪录第一个request
+                requestArray.append(currentRequest)
+            }
         }
     }
-
+    
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         //提示url存在问题
     }
